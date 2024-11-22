@@ -1,0 +1,10 @@
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: chartreuse;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}

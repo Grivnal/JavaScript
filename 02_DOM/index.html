@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,4 +49,108 @@
       </nav>
     <script src="./main.js"></script>
 </body> 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What do I have in my fridge?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .fridge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>What do I have in my fridge?</h1>
+
+    <div class="fridge-container">
+        <div class="item">
+            <img src="images/pepper.png" alt="Pepper">
+            <p>Pepper</p>
+        </div>
+        <div class="item">
+            <img src="images/apple.png" alt="Apple">
+            <p>Apple</p>
+        </div>
+        <div class="item">
+            <img src="images/cheese.png" alt="Cheese">
+            <p>Cheese</p>
+        </div>
+        <div class="item">
+            <img src="images/corn.png" alt="Corn">
+            <p>Corn</p>
+        </div>
+        <div class="item">
+            <img src="images/mushroom.png" alt="Mushroom">
+            <p>Mushroom</p>
+        </div>
+        <div class="item">
+            <img src="images/garlic.png" alt="Garlic">
+            <p>Garlic</p>
+        </div>
+        <div class="item">
+            <img src="images/beef.png" alt="Beef">
+            <p>Beef</p>
+        </div>
+        <div class="item">
+            <img src="images/fish.png" alt="Fish">
+            <p>Fish</p>
+        </div>
+        <div class="item">
+            <img src="images/eggs.png" alt="Eggs">
+            <p>Eggs</p>
+        </div>
+        <div class="item">
+            <img src="images/coriander.png" alt="Coriander">
+            <p>Coriander</p>
+        </div>
+    </div>
+
+    <div class="footer">... that's all ...</div>
+
+</body>
 </html>

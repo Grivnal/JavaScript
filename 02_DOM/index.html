@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
     <link rel="stylesheet" href="./bootstrap.css">
-</head> 
+</head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
@@ -47,10 +47,68 @@
           </div>
         </div>
       </nav>
+    
+      <div class="container mt-4">
+        <form>
+            <h1 class="text-center">Create New Product</h1>
+            <fieldset>    
+                <div class="row">
+                    <div class="col-4">
+                        <label for="modelInput" class="form-label mt-4">Model</label>
+                        <input type="text" class="form-control" id="modelInput"  placeholder="Enter model">
+                      </div>
+                      <div class="col-6">
+                        <label for="descriptionInput" class="form-label mt-4">Description</label>
+                        <input type="text" class="form-control" id="descriptionInput"  placeholder="Enter description">
+                      </div>
+                      <div class="col-2">
+                        <label for="inputPrice" class="form-label mt-4">Price</label>
+                        <input type="number" class="form-control" id="inputPrice" placeholder="Price" >
+                      </div>                           
+                </div>                          
+              <button id="create-btn" type="button" class="btn btn-primary mt-3">Create</button>
+            </fieldset>
+          </form>     
+          
+          <h2 class="text-center mt-2">Product List</h2>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Model</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">             
+              <tr class="table-secondary">
+                <th scope="row">0</th>
+                <td>IPhone 15</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>1200$</td>
+              </tr>  
+              <tr class="table-secondary">
+                <th scope="row">0</th>
+                <td>IPhone 15</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>1200$</td>
+              </tr>  
+              <tr class="table-secondary">
+                <th scope="row">0</th>
+                <td>IPhone 15</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>1200$</td>
+              </tr>             
+            </tbody>
+          </table>
+          <button id="delete-btn" type="button" class="btn btn-danger">Delete All</button>
+      </div> 
     <script src="./main.js"></script>
-</body> 
+</body>
 </html> -->
 
+
+<!-- hw 25-11-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,4 +229,4 @@
     </div>
   <script src="./js/main.js"></script>
 </body>
-</html>
+</html> 

@@ -1,0 +1,36 @@
+
+img {
+    float: left;
+    margin: 13px;
+}
+h1 {
+    font-family: 'Times New Roman', Courier, monospace; 
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+h4 {
+    float: left; 
+    margin-right: 15px;
+}
+input {
+    display: inline-block;
+    margin-top: 19px;
+}
+fieldset{
+    float: top;
+}
+ul{
+    display: inline-block;
+    margin-top: 19px;
+    list-style-type: none;  
+    padding-left: 0;     
+}
+li{
+    margin: 10px;
+}
+.indent {
+    padding-left: 20px; 
+}
+ 
+

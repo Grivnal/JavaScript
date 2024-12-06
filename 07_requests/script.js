@@ -1,69 +1,73 @@
-const apiKey = "b8d57201";
+const apiKey = "886ebf7e";
 const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=`;
-
+ 
 async function swapiGet(page) {    
     try {
-        const response = await fetch(url + page);
+        const title = document.getElementById("search-form").value;
+        const type = document.getElementById("typeSelect").value;
+
+        const response = await fetch(url + title + "&page=" + page + "&type=" + type);
         const data = await response.json();
-
-        const pageCount = Math.ceil(data.count / 10);
+ 
+        const pageCount = Math.ceil(data.totalResults / 10);
         const pagination = document.getElementById("pagination");
-
+ 
         pagination.innerHTML = "";
-
+ 
         let prevPage = page - 1;
         if(page === "1") {
             prevPage = "1";
         }
-
+ 
         let nextPage = parseInt(page) + 1;
         if(page == pageCount) {
             nextPage = pageCount.toString();
         }
-
+ 
         pagination.innerHTML += `<li class="page-item" onclick="swapiGet('${prevPage}')"><a class="page-link" href="#">prev</a></li>`;
         for(let i = 1; i <= pageCount; i++) {
             pagination.innerHTML += `<li class="page-item" onclick="swapiGet('${i}')"><a class="page-link" href="#">${i}</a></li>`;
         }
         pagination.innerHTML += `<li class="page-item" onclick="swapiGet('${nextPage}')"><a class="page-link" href="#">next</a></li>`;
-
-        console.log(data.results);
-        
+ 
+        console.log(data.Search);
+       
         const tbody = document.getElementById("tbody");
         tbody.innerHTML = "";
-        for (let i = 0; i < data.results.length; i++) {
-            const person = data.results[i];
+        for (let i = 0; i < data.Search.length; i++) {
+            const film = data.Search[i];
             tbody.innerHTML += `<tr>
-                <td>${title.name}</td>
-                <td>${title.year}</td>
-                <td>${titlr.info}</td>
+                <td>${film.Title}</td>
+                <td>${film.Year}</td>
+                <td>${film.Type}</td>
+                <td><img height="150px" src="${film.Poster}"/></td>
             </tr>`;
         }
     } catch (error) {
         console.log(error);
     }
 }
-
-swapiGet("1");
-// // "Name": "C-3PO", 
-// // "Year": "167", 
-// // "Info": "75", 
+ 
+// swapiGet("1");
+// // "Name": "C-3PO",
+// // "Year": "167",
+// // "Info": "75",
 // document.getElementById('search-form').addEventListener('submit', async function(event) {
 //     event.preventDefault();
 //     const title = document.getElementById('search-input').value;
 //     const response = await fetch(url + title);
 //     const data = await response.json();
-    
+   
 //     if (data.Response === "True") {
 //         displayResults(data.Search);
 //     } else {
 //         alert(data.Error);
 //     }
 //     });
-    
+   
 // function displayResults(movies) {
 // const tbody = document.getElementById('results-tbody');
-// tbody.innerHTML = ""; 
+// tbody.innerHTML = "";
 // movies.forEach(movie => {
 // tbody.innerHTML += `
 //     <tr>
@@ -75,30 +79,30 @@ swapiGet("1");
 //         try {
 //             const response = await fetch(url + page);
 //             const data = await response.json();
-    
+   
 //             const pageCount = Math.ceil(data.count / 10);
 //             const pagination = document.getElementById("pagination");
-    
+   
 //             pagination.innerHTML = "";
-    
+   
 //             let prevPage = page - 1;
 //             if(page === "1") {
 //                 prevPage = "1";
 //             }
-    
+   
 //             let nextPage = parseInt(page) + 1;
 //             if(page == pageCount) {
 //                 nextPage = pageCount.toString();
 //             }
-    
+   
 //             pagination.innerHTML += `<li class="page-item" onclick="swapiGet('${prevPage}')"><a class="page-link" href="#">prev</a></li>`;
 //             for(let i = 1; i <= pageCount; i++) {
 //                 pagination.innerHTML += `<li class="page-item" onclick="swapiGet('${i}')"><a class="page-link" href="#">${i}</a></li>`;
 //             }
 //             pagination.innerHTML += `<li class="page-item" onclick="swapiGet('${nextPage}')"><a class="page-link" href="#">next</a></li>`;
-    
+   
 //             console.log(data.results);
-            
+           
 //             const tbody = document.getElementById("tbody");
 //             tbody.innerHTML = "";
 //             for (let i = 0; i < data.results.length; i++) {
@@ -113,7 +117,7 @@ swapiGet("1");
 //             console.log(error);
 //         }
 //     }
-    
+   
 //     swapiGet("1");    
 // document.getElementById('search-form').addEventListener('submit', function (e) {
 //     e.preventDefault();
@@ -129,9 +133,10 @@ swapiGet("1");
 //                 renderMovies(data.Search);
 //                 renderPagination(query, page, data.totalResults);
 //             } else {
-//                 document.getElementById('results').innerHTML = '<p>Фільми не знайдено!</p>';
+//                 document.getElementById('results').innerHTML = '<p>Р¤С–Р»СЊРјРё РЅРµ Р·РЅР°Р№РґРµРЅРѕ!</p>';
 //                 document.getElementById('pagination').innerHTML = '';
 //             }
 //         })
-//         .catch(err => console.error('Помилка:', err));
+//         .catch(err => console.error('РџРѕРјРёР»РєР°:', err));
 // }
+ 

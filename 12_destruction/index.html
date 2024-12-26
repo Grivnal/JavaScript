@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-right: 5px;
+        }
+
+        .tab.active {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .weather-section {
+            margin-top: 20px;
+        }
+
+        .weather-item {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button id="search-btn">Search</button>
+
+    <div class="tabs">
+        <div class="tab active" id="tab-today">Today</div>
+        <div class="tab" id="tab-5day">5-Day Forecast</div>
+    </div>
+
+    <div class="content active" id="content-today">
+        <div id="current-weather" class="weather-section"></div>
+        <div id="hourly-forecast" class="weather-section"></div>
+        <div id="nearby-cities" class="weather-section"></div>
+    </div>
+
+    <div class="content" id="content-5day">
+        <div id="daily-forecast" class="weather-section"></div>
+    </div>
+
+   
+</body>
+</html>
